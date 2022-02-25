@@ -1,7 +1,7 @@
 azure/webapps-deploy@v2
   with:
-    app-name: your-app-name
+    app-name: blood_group_predictor
     slot-name: production
     package: .
   env:
-    AZURE_WEBAPP_NAME: your-app-name
+    AZURE_WEBAPP_NAME: blood_group_predictor
