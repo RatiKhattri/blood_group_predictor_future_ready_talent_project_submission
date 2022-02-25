@@ -1,0 +1,7 @@
+azure/webapps-deploy@v2
+  with:
+    app-name: your-app-name
+    slot-name: production
+    package: .
+  env:
+    AZURE_WEBAPP_NAME: your-app-name
