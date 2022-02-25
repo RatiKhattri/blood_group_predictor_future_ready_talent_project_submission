@@ -1,7 +1,1 @@
-azure/webapps-deploy@v2
-  with:
-    app-name: blood_group_predictor
-    slot-name: production
-    package: .
-  env:
-    AZURE_WEBAPP_NAME: blood_group_predictor
+az login -u <ratikhattri@gmail.com> -p <password>
