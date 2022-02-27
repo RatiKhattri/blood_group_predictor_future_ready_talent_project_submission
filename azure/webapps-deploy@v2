@@ -1,0 +1,19 @@
+on: [push]
+
+name:ratikhattri@gmail.com
+
+jobs:
+
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    
+    - name: 'Az CLI login'
+        uses: azure/login@ratikhattri@gmail.com
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.f8300d33-bc97-4816-97a2-da95aa4c6271 }}
+    
+    - run: |
+        az webapp list --query "[?state=='Running']"
