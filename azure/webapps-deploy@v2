@@ -23,8 +23,8 @@ az webapp create --name $SITENAME --plan $PLANNAME --runtime $RUNTIME --resource
 
 # To set up deployment from a local git repository, uncomment the following commands.
 # first, set the username and password (use environment variables!)
-# USERNAME=""
-# PASSWORD=""
+# USERNAME="ratikhattri@gmail.com"
+# PASSWORD="microsoft@8799"
 # az webapp deployment user set --user-name $USERNAME --password $PASSWORD
 
 # now, configure the site for deployment. in this case, we will deploy from the local git repository
