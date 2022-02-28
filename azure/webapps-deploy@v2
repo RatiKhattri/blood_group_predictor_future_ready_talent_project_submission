@@ -1,41 +1,16 @@
-SUBSCRIPTION="Azure for Students"
-RESOURCEGROUP="appsvc_linux_centralus"
-LOCATION="centralus"
-PLANNAME="appsvc_linux_centralus"
-PLANSKU="F1"
-SITENAME="BloodGroupPredictor"
-RUNTIME="PYTHON|3.9"
+ az ad sp create-for-rbac --name "blood_group_predictor" --role contributor \
+                            --scopes /subscriptions/{f8300d33-bc97-4816-97a2-da95aa4c6271}/resourceGroups/{blood_group_predictor_app} \
+                            --sdk-auth
+                            
+  # Replace {subscription-id}, {resource-group} with the subscription, resource group details
 
-# login supports device login, username/password, and service principals
-# see https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest#az_login
-az login
-# list all of the available subscriptions
-az account list -o table
-# set the default subscription for subsequent operations
-az account set --subscription $SUBSCRIPTION
-# create a resource group for your application
-az group create --name $RESOURCEGROUP --location $LOCATION
-# create an appservice plan (a machine) where your site will run
-az appservice plan create --name $PLANNAME --location $LOCATION --is-linux --sku $PLANSKU --resource-group $RESOURCEGROUP
-# create the web application on the plan
-# specify the node version your app requires
-az webapp create --name $SITENAME --plan $PLANNAME --runtime $RUNTIME --resource-group $RESOURCEGROUP
+  # The command should output a JSON object similar to this:
 
-# To set up deployment from a local git repository, uncomment the following commands.
-# first, set the username and password (use environment variables!)
-USERNAME="ratikhattri@gmail.com"
-PASSWORD="microsoft@8799"
-# az webapp deployment user set --user-name $USERNAME --password $PASSWORD
-
-# now, configure the site for deployment. in this case, we will deploy from the local git repository
-# you can also configure your site to be deployed from a remote git repository or set up a CI/CD workflow
-# az webapp deployment source config-local-git --name $SITENAME --resource-group $RESOURCEGROUP
-
-# the previous command returned the git remote to deploy to
-# use this to set up a new remote named "azure"
-# git remote add azure "https://$USERNAME@$SITENAME.scm.azurewebsites.net/$SITENAME.git"
-# push master to deploy the site
-# git push azure master
-
-# browse to the site
-# az webapp browse --name $SITENAME --resource-group $RESOURCEGROUP
+  {
+    "clientId": "<2e7a9f0b-900b-447f-9670-0f64bd1cd32d>",
+    "clientSecret": "<85405f1d-1902-4ed0-b884-5894d341eebc>",
+    "subscriptionId": "<f8300d33-bc97-4816-97a2-da95aa4c6271>",
+    "tenantId": "<27df70d6-2bb2-46c7-8476-b65c8529190f>",
+    (...)
+  }
+  
