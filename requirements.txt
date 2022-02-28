@@ -1,5 +1,4 @@
-pip install tk
-pip install random
+tk
+random
 
-pip install requests==3.8
 venv env
