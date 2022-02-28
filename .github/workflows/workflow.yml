@@ -1,0 +1,16 @@
+   az ad sp create-for-rbac --name "blood_group_predictor" --role contributor \
+                            --scopes /subscriptions/{f8300d33-bc97-4816-97a2-da95aa4c6271}/resourceGroups/{blood_group_predictor_app} \
+                            --sdk-auth
+                            
+  # Replace {subscription-id}, {resource-group} with the subscription, resource group details
+
+  # The command should output a JSON object similar to this:
+
+  {
+    "clientId": "<2e7a9f0b-900b-447f-9670-0f64bd1cd32d>",
+    "clientSecret": "<85405f1d-1902-4ed0-b884-5894d341eebc>",
+    "subscriptionId": "<f8300d33-bc97-4816-97a2-da95aa4c6271>",
+    "tenantId": "<27df70d6-2bb2-46c7-8476-b65c8529190f>",
+    (...)
+  }
+  
