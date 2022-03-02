@@ -20,7 +20,7 @@ jobs:
       - name: Set up Python version
         uses: actions/setup-python@v1
         with:
-          python-version: '3.9'
+          python-version: '3.8'
 
       - name: Create and start virtual environment
         run: |
@@ -35,7 +35,7 @@ jobs:
       - name: Upload artifact for deployment jobs
         uses: actions/upload-artifact@v2
         with:
-          name: python-app
+          name: blood_group_predictor
           path: |
             . 
             !venv/
@@ -45,13 +45,13 @@ jobs:
     needs: build
     environment:
       name: 'Production'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+      url: ${{ steps.deploy-to-webapp.outputs.http://bloodgrouppredictorapp.azurewebsites.net/ }}
 
     steps:
       - name: Download artifact from build job
         uses: actions/download-artifact@v2
         with:
-          name: python-app
+          name: blood_group_predictor
           path: .
           
       - name: 'Deploy to Azure Web App'
