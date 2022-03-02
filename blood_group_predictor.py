@@ -2,7 +2,7 @@ import tkinter as ttk
 from tkinter import *
 import random
  
-root = Tk()
+root = self.tk()
  
 root.geometry("1000x600")
 
