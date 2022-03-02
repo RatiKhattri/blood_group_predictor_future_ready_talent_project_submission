@@ -65,7 +65,7 @@ jobs:
     needs: build
     environment:
       name: 'Development'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-https://github.com/RatiKhattri/blood_group_predictor_future_ready_talent_project_submission/blob/main/blood_group_predictor.py }}
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
       - name: Download artifact from build job
