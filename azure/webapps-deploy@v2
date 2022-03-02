@@ -1,4 +1,4 @@
- az ad sp create-for-rbac --name "blood_group_predictor" --role contributor \
+ az ad sp create-for-rbac --name "blood_group_predictor.py" --role contributor \
                             --scopes /subscriptions/{f8300d33-bc97-4816-97a2-da95aa4c6271}/resourceGroups/{blood_group_predictor_app} \
                             --sdk-auth
                             
