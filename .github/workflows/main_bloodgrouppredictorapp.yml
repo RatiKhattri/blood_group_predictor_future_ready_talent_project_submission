@@ -35,7 +35,7 @@ jobs:
       - name: Upload artifact for deployment jobs
         uses: actions/upload-artifact@v2
         with:
-          name: blood_group_predictor
+          name: python-app
           path: |
             . 
             !venv/
@@ -45,13 +45,13 @@ jobs:
     needs: build
     environment:
       name: 'Production'
-      url: ${{ steps.deploy-to-webapp.outputs.http://bloodgrouppredictorapp.azurewebsites.net/ }}
+      url: ${{ steps.deploy-to-webapp.outputs.webapp.url }}
 
     steps:
       - name: Download artifact from build job
         uses: actions/download-artifact@v2
         with:
-          name: blood_group_predictor
+          name: python-app
           path: .
           
       - name: 'Deploy to Azure Web App'
