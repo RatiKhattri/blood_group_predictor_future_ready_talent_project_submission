@@ -33,6 +33,9 @@ jobs:
      
 
   
+      
+      - name: app
+        run: blood_group_predictor.py
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
       
