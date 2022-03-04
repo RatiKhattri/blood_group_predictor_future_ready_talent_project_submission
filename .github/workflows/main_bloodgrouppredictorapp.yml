@@ -23,7 +23,7 @@ jobs:
           python-version: '3.8'
 
       - name: Create and start virtual environment
-        run: |
+        run: blood_group_predictor.py
           python -m venv venv
           source venv/bin/activate
       
@@ -33,9 +33,7 @@ jobs:
      
 
   
-      
-      - name: app
-        run: blood_group_predictor.py
+     
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
       
