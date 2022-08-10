@@ -15,9 +15,9 @@ computer_value = {
     "2":"AB+",
     "3":"O+",
     "4":"A-",
-    "6":"B-",
-    "7":"AB-",
-    "8":"O-"
+    "5":"B-",
+    "6":"AB-",
+    "7":"O-"
 }
  
 
@@ -48,7 +48,7 @@ def button_disable():
 
 def A_positive():
     
-    c_v = computer_value[str(random.randint(0,8))]
+    c_v = computer_value[str(random.randint(0,7))]
     if c_v=='A+' :
         match_result="(A -> 93.75% , O -> 6.25%,(+) or (-))"
     elif c_v=='B+':
@@ -72,7 +72,7 @@ def A_positive():
 
  
 def B_positive():
-    c_v = computer_value[str(random.randint(0,8))]
+    c_v = computer_value[str(random.randint(0,7))]
     if c_v=='A+' :
         match_result=("A -> 18.75% ,B -> 18.75%,AB ->56.25%, O -> 6.25%,(+) or (-)")
     elif c_v=='B+' :
@@ -97,7 +97,7 @@ def B_positive():
 
 
 def AB_positive():
-    f = computer_value[str(random.randint(0,8))]
+    f = computer_value[str(random.randint(0,7))]
     if f=='A+' :
         match_result=("A -> 50% ,B -> 12.50% ,AB -> 37.50%,(+) or (-)")
     elif f=='B+' :
@@ -120,7 +120,7 @@ def AB_positive():
     button_disable() 
 
 def O_positive():
-    f = computer_value[str(random.randint(0,8))]
+    f = computer_value[str(random.randint(0,7))]
     if f=='A+':
         match_result=("A -> 75% , O -> 25%,(+) or (-)")
     elif f=='B+':
@@ -146,7 +146,7 @@ def O_positive():
 
 def A_negative():
     
-    c_v = computer_value[str(random.randint(0,8))]
+    c_v = computer_value[str(random.randint(0,7))]
     if c_v=='A+' :
         match_result="(A -> 93.75% , O -> 6.25%,(+) or (-))"
     elif c_v=='B+':
@@ -170,7 +170,7 @@ def A_negative():
 
  
 def B_negative():
-    c_v = computer_value[str(random.randint(0,8))]
+    c_v = computer_value[str(random.randint(0,7))]
     if c_v=='A+' :
         match_result=("A -> 18.75% ,B -> 18.75%,AB ->56.25%, O -> 6.25%,(+) or (-)")
     elif c_v=='B+' :
@@ -195,7 +195,7 @@ def B_negative():
 
 
 def AB_negative():
-    f = computer_value[str(random.randint(0,8))]
+    f = computer_value[str(random.randint(0,7))]
     if f=='A+' :
         match_result=("A -> 50% ,B -> 12.50% ,AB -> 37.50%,(+) or (-)")
     elif f=='B+' :
@@ -218,7 +218,7 @@ def AB_negative():
     button_disable() 
 
 def O_negative():
-    f = computer_value[str(random.randint(0,8))]
+    f = computer_value[str(random.randint(0,7))]
     if f=='A+':
         match_result=("A -> 75% , O -> 25%,(+)  or (-)")
     elif f=='B+':
